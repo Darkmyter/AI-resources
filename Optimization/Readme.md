@@ -11,3 +11,10 @@
 
 * [ENSTA OPT201](resources/ENSTA-%20OPT201-cheat-sheet.pdf) (FR)
 * [ENSTA OPT202](resources/ENSTA-OPT202-cheat-sheet.pdf) (FR)
+
+
+### Notions
+
+* KL-diversion:
+  * [KL Divergence for Machine Learning](https://dibyaghosh.com/blog/probability/kldivergence.html)
+  * 
