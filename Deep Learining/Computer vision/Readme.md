@@ -2,6 +2,10 @@
 
 ## **CNN**:
 
+## Courses
+
+* https://www.coursera.org/learn/convolutional-neural-networks?irclickid=WUyTrCUidxyNRpEy9e3E-XntUkAzwmXb102tWs0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=2757406&utm_content=b2c
+
 ### Cheat sheets
 * ⭐ [Cheat sheet stanford CS230](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
 * ⭐ [Detailed explanation stanford CS231](https://cs231n.github.io/convolutional-networks/)
@@ -47,6 +51,9 @@
 ## FAQ
 
 * How to use the filter size?
+* How to compute sizes in CNN ?
+* How to know padding and stride size ?
+* How to perform flatten ?
 * what’s group normalization ([In-layer normalization techniques for training very deep neural networks | AI Summer](https://theaisummer.com/normalization/#group-normalization-2018)) ? what’s weight standardization ([In-layer normalization techniques for training very deep neural networks | AI Summer](https://theaisummer.com/normalization/#weight-standardization-2019))?  Difference from BN ?
 * How to calculate Conv output size and how to find the right pad and stride ?
 * stide or maxpool ?
