@@ -1,4 +1,6 @@
-## Data Science and Machine learning Interview resources
+# Data Science and Machine learning Interview resources
+
+All the knowledge you need to crack any Data Science interview:
 
 
 * ⭐ [Cracking the Data Science Interview](https://github.com/khanhnamle1994/cracking-the-data-science-interview)
