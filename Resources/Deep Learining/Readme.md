@@ -22,3 +22,12 @@ Collections are a bundle of multiple coherent formats of educative materials (bo
 
 ## Courses:
 * [DeepLearning.AI](https://www.deeplearning.ai/)
+
+## Regularization
+* [https://theaisummer.com/regularization/](https://theaisummer.com/regularization/#stochastic-depth)
+
+## Notions:
+* Rank Collapse:
+    * [Rank Collapse in Deep Learning](https://calculatedcontent.com/2018/09/21/rank-collapse-in-deep-learning/), 2018
+* Einsom operations:
+    * [Einsum is All you Need - Einstein Summation in Deep Learning](https://rockt.github.io/2018/04/30/einsum)
