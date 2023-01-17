@@ -2,17 +2,17 @@
 
 
 * 📄 [NLP resources](NLP/Readme.md)
-* 🖼 [Computer Vision resources](Computer%20vision/Readme.md)
+* 🖼️ [Computer Vision resources](Computer%20vision/Readme.md)
 
 
 ## Collections
 Collections are a bundle of multiple coherent formats of educative materials (books, video lectures, exercise notebooks and more) offer by same authors.
-
 * ⭐ [Dive into deep learning](http://d2l.ai/)
 
 ## Books
 
-* [The principles of Deep Learning theory](https://arxiv.org/pdf/2106.10165.pdf) 
+* ⭐ [Deep Learning (Adaptive Computation and Machine Learning series)](https://github.com/janishar/mit-deep-learning-book-pdf/blob/master/complete-book-bookmarked-pdf/deeplearningbook.pdf)
+* [The principles of Deep Learning theory](https://arxiv.org/pdf/2106.10165.pdf)
 
 
 ## Blogs:
@@ -23,8 +23,13 @@ Collections are a bundle of multiple coherent formats of educative materials (bo
 ## Courses:
 * [DeepLearning.AI](https://www.deeplearning.ai/)
 
-## Regularization
+## Regularization: 
+> Regularization is any modification we make to a learning algorithm that is intended to reduce its generalization error but not its training error
 * [https://theaisummer.com/regularization/](https://theaisummer.com/regularization/#stochastic-depth)
+
+
+## Optimization
+* [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/), 2016
 
 ## Notions:
 * Rank Collapse:

@@ -1,43 +1,40 @@
-# Computer vision Resources
+# Deep Learning Computer Vision Resources
 
-## **CNN**:
+Computer vision is the field that studies the understanding and handling of images and videos by computer.  
+Deep Learning has proven to be efficient in this field and able to tackle a countless number of tasks, from image classification of object tracking. 
 
-## Courses
+This is a collection of resources that theory of Convolutional Neural Networks, its various architectures and techniques and recent works in the field such as Vision Transformers and Diffusion models.
 
-* https://www.coursera.org/learn/convolutional-neural-networks?irclickid=WUyTrCUidxyNRpEy9e3E-XntUkAzwmXb102tWs0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=2757406&utm_content=b2c
+## **Convolutional Neural Networks**:
 
 ### Cheat sheets
 * ⭐ [Cheat sheet stanford CS230](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks)
 * ⭐ [Detailed explanation stanford CS231](https://cs231n.github.io/convolutional-networks/)
 
-### Architectures:
+### Courses
 
-* Overviews:
+* [coursera course](https://www.coursera.org/learn/convolutional-neural-networks?irclickid=WUyTrCUidxyNRpEy9e3E-XntUkAzwmXb102tWs0&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=2757406&utm_content=b2c)
+
+
+
+## Image Classification
+Image classification is the most basic task of computer vision. We teach an agent to provide a single label for an entire image.  
+The research poured into this challenge helped create the backbones of various specialized models across different fields and tasks.
+
+Understanding the notions and ideas behind the popular image classifier holds the key to more advanced techniques.
+
+
+An overview of the prominent architectures:
+  * ⭐ [Best deep CNN architectures and their principles: from AlexNet to EfficientNet | AI Summer](https://theaisummer.com/cnn-architectures/)
   * [Illustrated: 10 CNN Architectures | by Raimi Karim | Towards Data Science](https://towardsdatascience.com/illustrated-10-cnn-architectures-95d78ace614d)
   * [Top 10 CNN Architectures Every Machine Learning Engineer Should Know](https://towardsdatascience.com/top-10-cnn-architectures-every-machine-learning-engineer-should-know-68e2b0e07201)
-  * ⭐ [Best deep CNN architectures and their principles: from AlexNet to EfficientNet | AI Summer](https://theaisummer.com/cnn-architectures/)
-* [Dilated Convolutions and Kronecker Factored Convolutions](https://www.inference.vc/dilated-convolutions-and-kronecker-factorisation/)
-* **InceptionNet|GoogleNet**:
   * [A Simple Guide to the Versions of the Inception Network](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
-* **VAE**:
-  * ⭐ [The theory behind Latent Variable Models: formulating a Variational Autoencoder | AI Summer](https://theaisummer.com/latent-variable-models/)
 
+⭐ All you need to understand the papers: [Image Classification papers explained](image-classification-papers.md)
 
+## Object detection (WIP)
 
-## Notions / Techniques
-* **Receptive field**
-  * [Understanding the receptive field of deep convolutional networks | AI Summer](https://theaisummer.com/receptive-field/)
-* **Skip connections**
-  * [Intuitive Explanation of Skip Connections in Deep Learning | AI Summer ](https://theaisummer.com/skip-connections/)
-* **Batch normalization**:
-  * BN’s parameters (means and variances) need adjustment between pre-training and transfer. On the other hand, GN doesn’t depend on any parameter states. Another reason is that BN uses batch-level statistics, which become unreliable for distributed training in small devices like TPU’s. A 4K batch distributed across 500 TPU’s means 8 batches per worker, which does not give a good estimation of the statistics. By changing the normalization technique to GN+WS they avoid synchronization across workers.
-
-
-
-## **Image segmentation**
-* [Semantic Segmentation in the era of Neural Networks | AI Summer](https://theaisummer.com/Semantic_Segmentation/) 
-
-## **Object detection**
+Object detection is the task of location and classifying objects on an image. The predictions are bounding box that are rough delimitations of the object.
 
 ### Architectures
 
@@ -51,49 +48,34 @@
 * Non-maximum suppression
 
 
-### Design tips
+## Image segmentation (WIP)
+
+
+* [Semantic Segmentation in the era of Neural Networks | AI Summer](https://theaisummer.com/Semantic_Segmentation/) 
+
+
+## Notions / Techniques
+* Receptive field
+  * [Understanding the receptive field of deep convolutional networks | AI Summer](https://theaisummer.com/receptive-field/)
+* Skip connections
+  * [Intuitive Explanation of Skip Connections in Deep Learning | AI Summer ](https://theaisummer.com/skip-connections/)
+* Dilated Convolutions:
+  * [Dilated Convolutions and Kronecker Factored Convolutions](https://www.inference.vc/dilated-convolutions-and-kronecker-factorisation/)
+* Batch normalization:
+  * BN’s parameters (means and variances) need adjustment between pre-training and transfer. On the other hand, GN doesn’t depend on any parameter states. Another reason is that BN uses batch-level statistics, which become unreliable for distributed training in small devices like TPU’s. A 4K batch distributed across 500 TPU’s means 8 batches per worker, which does not give a good estimation of the statistics. By changing the normalization technique to GN+WS they avoid synchronization across workers.
+* VAE:
+  * ⭐ [The theory behind Latent Variable Models: formulating a Variational Autoencoder | AI Summer](https://theaisummer.com/latent-variable-models/)
+
+
+## Designing CNNs
 
 * [14 Design Patterns To Improve Your Convolutional Neural Networks](https://medium.com/topbots/14-design-patterns-to-improve-your-convolutional-neural-networks-971bb388a082), 2017
 
 ## FAQ
 
-* How to use the filter size?
+[List of questions and answers around Convolutional Neural Networks](faq.md)
 
 
-* How compute number of parameters in a conv layer?
-  * number of parameters is $(k*k*ch_{in}) * ch_{out} + ch_{out}$, where $ch$ is the number of channels.
-* How to compute the output size of conv  layer? How to choose padding and stride size ?
-  * The input spatial size (HxW) is usually preserved between layer. Using this formula, $out=(in+2∗p−k)/s +1$, where $out$ and $in$ are the spatial dims of output and input, $k$ is the kernel size, $p$ is the padding size and $s$ is the stride size, we can choose $p$ and $s$ based on the desired kernel size. $s$ is usually set to 1 or 2, higher values are rare in practice.  
-  When $s=1$ and we want to preserve the size, we can use this simpler formula: $p=(k-1)/2$
-* How to compute the output size of Pool layer?
-  * $out=(in−k)/s +1$, where $out$ and $in$ are the spatial dims of output and input, $k$ is the kernel size, $s$ is the stride size. The depth remains unchanged. Common hyper-parameters are: $k=3, s=2$ and $k=2, s=2$. 
-* How to perform flatten ?
-* what’s group normalization ([In-layer normalization techniques for training very deep neural networks | AI Summer](https://theaisummer.com/normalization/#group-normalization-2018)) ? what’s weight standardization ([In-layer normalization techniques for training very deep neural networks | AI Summer](https://theaisummer.com/normalization/#weight-standardization-2019))?  Difference from BN ?
-* How to calculate Conv output size and how to find the right pad and stride ?
-* stide or maxpool ?
-* Should I use `inplace=True` in pytroch?
-  * **`inplace=True` means that it will modify the input directly, without allocating any additional output.** It can sometimes slightly decrease the memory usage, but may not always be a valid operation (because the original input is destroyed). However, if you don’t see an error, it means that your use case is valid.
-  * From pytorch [website](https://pytorch.org/docs/master/notes/autograd.html#in-place-operations-on-variables): **Performing inplace operations on the input of any of the functions is forbidden** as they may lead to unexpected side-effects. PyTorch will throw an error if the input to a pack hook is modified inplace but does not catch the case where the input to an unpack hook is modified inplace.
-
-* In convolutional neural networks, what effect does the size (e.g. 3x3, 5x5, 7x7) of the convolution kernel have on the architecture of the convolutional neural networks?
-
-  * Convolutional neural networks work on 2 assumptions:
-    * Low level features are local
-    * What's useful in one place will also be useful in other places
-  
-  * Kernel size should be determined by how strongly we believe in those assumptions for the problem at hand.  
-  * In one extreme case where we have 1x1 kernels, we are essentially saying low level features are per-pixel, and they don't affect neighbouring pixels at all, and that we should apply the same operation to all pixels.  
-  * In the other extreme, we have kernels the size of the entire image. In this case the CNN essentially becomes fully connected, and stops being a CNN, and we are no longer making any assumption on low level feature locality.  
-  * In practice, this is often done by just trying a few kernel sizes, and see what works best.
-
-* What is time complexity and why preserve it between layers?
-
-
-* Can we go lower than 3x3 receptive size filters if it provides the same benefits as factorizing 5x5 or 7x7?
-  * The answer is “No.” 3 x 3 is considered to be the smallest size to capture the notion of left to right, top to down, etc. So lowering the filter size further could impact the ability of the model to understand the spatial features of the image.
-
-* What's the use of 1x1 convolutions?
-  * 1×1 convolution can be introduced as bottleneck layer to reduce the number of input feature-maps or increase them. This was applied in DenseNet and Inception networks.
 
 ## Notes
 * Note that all pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (N, 3, H, W), where N is the number of images, H and W are expected to be at least 224 pixels. The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225]
