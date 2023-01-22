@@ -3,6 +3,7 @@
 This is a collection of blogs, videos and personal notes that explain and dive into major Image Classification publications.  
 These materials helped grasped the concepts and ideas proposed in each paper.
 
+- [Pyramid Vision Transformer:, **Pyramid Vision Transformer, 2021**](#pyramid-vision-transformer-pyramid-vision-transformer-2021)
 - [Data-Efficient Image Transformers, **DeiT, 2021**](#data-efficient-image-transformers-deit-2021)
 - [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, **ViT, 2020**](#an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-vit-2020)
 - [Meta Pseudo Labels, **2020**](#meta-pseudo-labels-2020)
@@ -11,16 +12,39 @@ These materials helped grasped the concepts and ideas proposed in each paper.
 - [Densely Connected Convolutional Networks, **DenseNet, 2017**](#densely-connected-convolutional-networks-densenet-2017)
 - [Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning, **InceptionV4, Inception-ResNet v1 and v2, 2016**](#inception-v4-inception-resnet-and-the-impact-of-residual-connections-on-learning-inceptionv4-inception-resnet-v1-and-v2-2016)
 - [Deep Residual Learning for Image Recognition, **ResNet, 2015**](#deep-residual-learning-for-image-recognition-resnet-2015)
-- [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION, **VGG, 2014**](#very-deep-convolutional-networks-for-large-scale-image-recognition-vgg-2014)
 - [Rethinking the Inception Architecture for Computer Vision, **InceptionV2 and InceptionV3, 2015**](#rethinking-the-inception-architecture-for-computer-vision-inceptionv2-and-inceptionv3-2015)
 - [Going deeper with convolutions, **InceptionV1, 2014**](#going-deeper-with-convolutions-inceptionv1-2014)
+- [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION, **VGG, 2014**](#very-deep-convolutional-networks-for-large-scale-image-recognition-vgg-2014)
 
+
+## [Pyramid Vision Transformer:](https://arxiv.org/pdf/2102.12122.pdf), **Pyramid Vision Transformer, 2021**
+  * Notes:
+    * 
 
 
 ## [Data-Efficient Image Transformers](https://arxiv.org/abs/2012.12877), **DeiT, 2021**
   * Articles:
     * [DeiT - Data-efficient image transformers & distillation through attention (paper illustrated)](https://www.youtube.com/watch?v=HobIo2oT0xY&embeds_euri=https%3A%2F%2Ftheaisummer.com%2F&source_ve_path=MjM4NTE&feature=emb_title)
-    * []( )
+  * Notes:
+    * DeiT proposed a way of training vision transformer less data than the ViT by using knowledge distillation, regularization and data augmentation.
+    * knowledge distillation:
+      * A RegNet-Y network is trained and used as a teacher.
+      * The output features of the teacher is passed on to the transformer as input.
+      * The transformer makes two predictions, one that is compared to the ground truth and the other to the teacher network prediction.
+      * DeiT loss: $hardDistill=0.5​CE(σ(Z_{cls}​),y_{true}​)+0.5​CE(σ(Z_{distill}​),y_{teacher}​)$
+    * Regularization:
+      * Transformers require a lot of data augmentation.
+      * Most of techniques that were evaluated proved to be useful:
+        * Rand-augment
+        * random erasing
+        * MixUp
+        * CutAndMix
+        * Auto-Augment
+        * Repeated augmentation
+    * Regularization & Optimizers:
+      * Transformers are sensitive to the setting of optimization hyper-parameters
+      * AdamW gives the best performance with same lr as ViT and smaller weight decay.
+      * Stochastic depth facilitates the convergence of transformers, especially deep ones.
 
 ## [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929), **ViT, 2020**
   * Articles:
@@ -57,7 +81,7 @@ These materials helped grasped the concepts and ideas proposed in each paper.
         
         $$ depth: d = αφ \\ width: w = βφ \\ resolution: r = γφ $$ 
         such that $ α · β^2 · γ^2 ≈ 2$ given that $α ≥ 1, β ≥ 1, γ ≥ 1$ where α, β, γ are constants that can be determined by a small grid search.
-    * The baseline architecture was found using neural architecture search so that it optimizes both accuracy and FLOPS, called EfficientNet-B0.
+    * The baseline architecture was found using neural architecture search so that it optimizes both accuracy and FLOPS, called EfficientNet-B0. This architecture is based on Inverted Residual Convolution, a CNNBlock used in MobileNetV2.
 
 ## [Big Transfer (BiT): General Visual Representation Learning](https://arxiv.org/pdf/1912.11370.pdf), **BiT, 2019**
   * Articles:
@@ -99,16 +123,6 @@ These materials helped grasped the concepts and ideas proposed in each paper.
   * **Training Notes**:
     * We adopt batch normalization (BN) right after each convolution and before activation. We use SGD with a mini-batch size of 256. The learning rate starts from 0.1 and is divided by 10 when the error plateaus, and the models are trained for up to 60 × 104 iterations. We use a weight decay of 0.0001 and a momentum of 0.9. We do not use dropout.
 
-## [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION](https://arxiv.org/pdf/1409.1556.pdf), **VGG, 2014**
-  * **Articles**:
-    * [Introduction to VGG16 | What is VGG16?](https://www.mygreatlearning.com/blog/introduction-to-vgg16/)
-  * **Notes:**
-    * Building a deeper network proved to increase the performance to a certain point.
-    * The main principle is that a stack of three 3×3 conv. layers are similar to a single 7×7 layer. And maybe even better! Because they use three non-linear activations in between (instead of one), which makes the function more discriminative.
-  * **Training notes:**
-    *  The batch size was set to 256, momentum to 0.9. The training was regularised by weight decay (the L2 penalty multiplier set to $5*10^{−4}$) and dropout regularisation for the first two fully-connected layers (dropout ratio set to 0.5). The learning rate was initially set to $10^{−2}$, and then decreased by a factor of 10 when the validation set accuracy stopped improving. In total, the learning rate was decreased 3 times, and the learning was stopped after 370K iterations (74 epochs)
-
-
 ## [Rethinking the Inception Architecture for Computer Vision](https://arxiv.org/pdf/1512.00567v3.pdf), **InceptionV2 and InceptionV3, 2015**
   * **Articles:**
     * [A Simple Guide to the Versions of the Inception Network](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202)
@@ -144,6 +158,15 @@ These materials helped grasped the concepts and ideas proposed in each paper.
       ```
   * **Training notes:**
     * Our training used asynchronous stochastic gradient descent with 0.9 momentum, fixed learning rate schedule (decreasing the learning rate by 4% every 8 epochs).
+
+## [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION](https://arxiv.org/pdf/1409.1556.pdf), **VGG, 2014**
+  * **Articles**:
+    * [Introduction to VGG16 | What is VGG16?](https://www.mygreatlearning.com/blog/introduction-to-vgg16/)
+  * **Notes:**
+    * Building a deeper network proved to increase the performance to a certain point.
+    * The main principle is that a stack of three 3×3 conv. layers are similar to a single 7×7 layer. And maybe even better! Because they use three non-linear activations in between (instead of one), which makes the function more discriminative.
+  * **Training notes:**
+    *  The batch size was set to 256, momentum to 0.9. The training was regularised by weight decay (the L2 penalty multiplier set to $5*10^{−4}$) and dropout regularisation for the first two fully-connected layers (dropout ratio set to 0.5). The learning rate was initially set to $10^{−2}$, and then decreased by a factor of 10 when the validation set accuracy stopped improving. In total, the learning rate was decreased 3 times, and the learning was stopped after 370K iterations (74 epochs)
 
 
 
