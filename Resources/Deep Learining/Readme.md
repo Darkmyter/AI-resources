@@ -29,7 +29,7 @@ Collections are a bundle of multiple coherent formats of educative materials (bo
 
 
 ## Optimization
-* [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/), 2016
+* [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/), 2020
 
 ## Notions:
 * Rank Collapse:
