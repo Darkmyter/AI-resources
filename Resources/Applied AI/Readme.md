@@ -7,3 +7,6 @@
 
 ## Blogs
 * [Applied ML](https://github.com/eugeneyan/applied-ml): Curated papers, articles, and blogs on data science & machine learning in production.
+
+## AI products:
+* [AI Product Index](https://github.com/dair-ai/AI-Product-Index)
