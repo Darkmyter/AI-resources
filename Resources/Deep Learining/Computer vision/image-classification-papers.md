@@ -1,6 +1,6 @@
-# Image classification papers explained <!-- omit in toc -->
+# Image Classification papers explained <!-- omit in toc -->
 
-This is a collection of blogs, videos and personal notes that explain and dive into major Image Classification publications.  
+This is a collection of blogs, videos and personal notes that explain and dive into major Image Classification publications (Backbones of modern architectures).
 These materials helped grasped the concepts and ideas proposed in each paper.
 
 - [Pyramid Vision Transformer:, **Pyramid Vision Transformer, 2021**](#pyramid-vision-transformer-pyramid-vision-transformer-2021)
