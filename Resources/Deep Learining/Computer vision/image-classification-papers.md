@@ -3,7 +3,6 @@
 This is a collection of blogs, videos and personal notes that explain and dive into major Image Classification publications (Backbones of modern architectures).
 These materials helped grasped the concepts and ideas proposed in each paper.
 
-- [Pyramid Vision Transformer:, **Pyramid Vision Transformer, 2021**](#pyramid-vision-transformer-pyramid-vision-transformer-2021)
 - [Data-Efficient Image Transformers, **DeiT, 2021**](#data-efficient-image-transformers-deit-2021)
 - [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, **ViT, 2020**](#an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-vit-2020)
 - [Meta Pseudo Labels, **2020**](#meta-pseudo-labels-2020)
@@ -17,9 +16,9 @@ These materials helped grasped the concepts and ideas proposed in each paper.
 - [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION, **VGG, 2014**](#very-deep-convolutional-networks-for-large-scale-image-recognition-vgg-2014)
 
 
-## [Pyramid Vision Transformer:](https://arxiv.org/pdf/2102.12122.pdf), **Pyramid Vision Transformer, 2021**
+<!-- ## [Pyramid Vision Transformer:](https://arxiv.org/pdf/2102.12122.pdf), **Pyramid Vision Transformer, 2021**
   * Notes:
-    * 
+    *  -->
 
 
 ## [Data-Efficient Image Transformers](https://arxiv.org/abs/2012.12877), **DeiT, 2021**
