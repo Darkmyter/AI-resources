@@ -62,7 +62,7 @@ The Cross Entropy loss is used for class term.
 For the bounding box term, we find:
 * IoU loss
   * It optimizes the overlapping area between the prediction $b$ and ground truth $b^{gt}$.
-  * $$L_{IoU} = - logIoU(b, b^{gt})
+  * $$L_{IoU} = - logIoU(b, b^{gt})$$
 * GIoU loss:
   * The Generalized IoU loss, attempts to bring the prediction $b$ and ground truth $b^{gt}$ closer by reducing the size the smallest convex hull  $c$ that encloses them. It optimizes the IoU too. 
   * The loss thus improves even if there is no intersection between $b$ and $b^{gt}$
